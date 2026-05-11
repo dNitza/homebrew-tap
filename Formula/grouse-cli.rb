@@ -1,8 +1,8 @@
 class GrouseCli < Formula
   desc "Interact with grouse.site from your command-line"
   homepage "https://github.com/dNitza/grouse-cli"
-  url "https://github.com/dnitza/grouse-cli/archive/refs/tags/v0.0.2.tar.gz"
-  sha256 "25a0eee1e07f7110cf76842fab093069ae1f4a898fef292bd57b19551ea4db39"
+  url "https://github.com/dnitza/grouse-cli/archive/refs/tags/v0.0.3.tar.gz"
+  sha256 "60ace5528e5bffbf8f4df42a168bdfbfce3ffb43b35e526c8ba9b4520edc7954"
   license "MIT"
   head "https://github.com/dnitza/grouse-cli.git", branch: "main"
 
