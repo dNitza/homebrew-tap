@@ -36,14 +36,14 @@ class GrouseCli < Formula
     end
 
     # Create a wrapper that uses `bundle exec` so bundler sets up the load path correctly
-    (bin/"grouse-cli").write <<~EOS
+    (bin/"grouse").write <<~EOS
       #!/bin/bash
       export BUNDLE_GEMFILE="#{libexec}/Gemfile"
       export BUNDLE_PATH="#{libexec}/vendor/bundle"
       export PATH="#{Formula["ruby@3"].opt_bin}:$PATH"
       exec "#{Formula["ruby@3"].opt_bin}/bundle" exec "#{libexec}/bin/grouse-cli" "$@"
     EOS
-    (bin/"grouse-cli").chmod 0755
+    (bin/"grouse").chmod 0755
   end
 
   test do
