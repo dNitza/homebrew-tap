@@ -16,7 +16,7 @@ class GrouseCli < Formula
     libexec.install Dir["*"]
 
     # Ensure the repo-provided executable exists and is executable
-    app_exec = libexec/"bin/grouse-cli"
+    app_exec = libexec/"bin/grouse"
     app_exec.chmod 0755 if app_exec.exist?
 
     ENV["BUNDLE_PATH"] = (libexec/"vendor/bundle").to_s
@@ -41,14 +41,14 @@ class GrouseCli < Formula
       export BUNDLE_GEMFILE="#{libexec}/Gemfile"
       export BUNDLE_PATH="#{libexec}/vendor/bundle"
       export PATH="#{Formula["ruby@3"].opt_bin}:$PATH"
-      exec "#{Formula["ruby@3"].opt_bin}/bundle" exec "#{libexec}/bin/grouse-cli" "$@"
+      exec "#{Formula["ruby@3"].opt_bin}/bundle" exec "#{libexec}/bin/grouse" "$@"
     EOS
     (bin/"grouse").chmod 0755
   end
 
   test do
     output = shell_output("#{bin}/#{name} --help")
-    assert_match "grouse-cli", output
+    assert_match "grouse", output
     assert_match "auth", output
   end
 end
