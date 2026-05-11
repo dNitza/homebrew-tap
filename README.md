@@ -1,5 +1,15 @@
 # Dnitza Tap
 
+## Formulae
+
+### grouse-cli
+
+Interact with [grouse.site](https://github.com/dNitza/grouse-cli) from your command-line.
+
+```sh
+brew install dnitza/tap/grouse-cli
+```
+
 ## How do I install these formulae?
 
 `brew install dnitza/tap/<formula>`
