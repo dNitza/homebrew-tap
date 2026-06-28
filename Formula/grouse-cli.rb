@@ -6,11 +6,11 @@ class GrouseCli < Formula
   license "MIT"
   head "https://github.com/dnitza/grouse-cli.git", branch: "main"
 
-  depends_on "ruby@3"
+  depends_on "ruby@4"
 
   def install
     # Ensure Bundler uses brewed Ruby during build
-    ENV.prepend_path "PATH", Formula["ruby@3"].opt_bin
+    ENV.prepend_path "PATH", Formula["ruby@4"].opt_bin
 
     # Keep project tree intact so require_relative works
     libexec.install Dir["*"]
@@ -40,8 +40,8 @@ class GrouseCli < Formula
       #!/bin/bash
       export BUNDLE_GEMFILE="#{libexec}/Gemfile"
       export BUNDLE_PATH="#{libexec}/vendor/bundle"
-      export PATH="#{Formula["ruby@3"].opt_bin}:$PATH"
-      exec "#{Formula["ruby@3"].opt_bin}/bundle" exec "#{libexec}/bin/grouse" "$@"
+      export PATH="#{Formula["ruby@4"].opt_bin}:$PATH"
+      exec "#{Formula["ruby@4"].opt_bin}/bundle" exec "#{libexec}/bin/grouse" "$@"
     EOS
     (bin/"grouse").chmod 0755
   end
